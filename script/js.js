@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const controller = new AbortController();
             // 60s timeout — rembg can take time on first run
-            const timeoutId = setTimeout(() => controller.abort(), 60000);
+            const timeoutId = setTimeout(() => controller.abort(), 120000); // 2 min — Render cold start + CPU inference
 
             const response = await fetch("https://snappass-ai-backend.onrender.com/api/upload", {
                 method: "POST",
