@@ -1,9 +1,18 @@
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
+
+const uploadDir = path.join(__dirname, "../uploads");
+
+// Render's filesystem is ephemeral and uploads/ is gitignored —
+// it won't exist on a fresh deploy unless we create it ourselves.
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+}
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, "../uploads"));
+        cb(null, uploadDir);
     },
     filename: (req, file, cb) => {
         const uniqueName =

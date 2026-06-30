@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             await new Promise(r => setTimeout(r, 500));
 
-            const imageURL = "/uploads/" + data.image;
+            const imageURL = "https://snappass-ai-backend.onrender.com/uploads/" + data.image;
             resultImage.src = imageURL;
             downloadBtn.href = imageURL;
             downloadBtn.setAttribute("download", "passport-photo.png");

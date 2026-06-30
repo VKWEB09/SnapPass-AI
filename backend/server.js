@@ -1,6 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
+
+const uploadsDir = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+}
 
 const uploadRoutes = require("./routes/upload");
 
