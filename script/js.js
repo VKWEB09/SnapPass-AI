@@ -118,16 +118,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactSubmit = document.getElementById("contact-submit");
     if (contactSubmit) {
         contactSubmit.addEventListener("click", () => {
-            const name  = document.getElementById("contact-name");
+            const name = document.getElementById("contact-name");
             const email = document.getElementById("contact-email");
-            const msg   = document.getElementById("contact-message");
+            const msg = document.getElementById("contact-message");
             let valid = true;
 
             [name, email, msg].forEach(f => f.classList.remove("input-error"));
 
-            if (!name.value.trim())  { name.classList.add("input-error");  valid = false; }
+            if (!name.value.trim()) { name.classList.add("input-error"); valid = false; }
             if (!email.value.trim() || !email.value.includes("@")) { email.classList.add("input-error"); valid = false; }
-            if (!msg.value.trim())   { msg.classList.add("input-error");   valid = false; }
+            if (!msg.value.trim()) { msg.classList.add("input-error"); valid = false; }
 
             if (!valid) {
                 showToast("Please fill in all fields correctly.", "error");
@@ -143,37 +143,37 @@ document.addEventListener("DOMContentLoaded", () => {
     /*=====================================
         Upload Elements
     =====================================*/
-    const dropZone       = document.getElementById("drop-zone");
-    const fileInput      = document.getElementById("file-input");
-    const selectBtn      = document.getElementById("select-btn");
-    const removeBtn      = document.getElementById("remove-img");
-    const errorBox       = document.getElementById("error-msg");
+    const dropZone = document.getElementById("drop-zone");
+    const fileInput = document.getElementById("file-input");
+    const selectBtn = document.getElementById("select-btn");
+    const removeBtn = document.getElementById("remove-img");
+    const errorBox = document.getElementById("error-msg");
     const defaultContent = document.getElementById("upload-content-default");
-    const preview        = document.getElementById("upload-preview");
-    const previewImg     = document.getElementById("image-display");
-    const fileNameEl     = document.getElementById("file-name");
-    const fileSizeEl     = document.getElementById("file-size");
-    const loadingEl      = document.getElementById("upload-loading");
-    const loaderStatus   = document.getElementById("loader-status");
-    const progressBar    = document.getElementById("progress-bar");
+    const preview = document.getElementById("upload-preview");
+    const previewImg = document.getElementById("image-display");
+    const fileNameEl = document.getElementById("file-name");
+    const fileSizeEl = document.getElementById("file-size");
+    const loadingEl = document.getElementById("upload-loading");
+    const loaderStatus = document.getElementById("loader-status");
+    const progressBar = document.getElementById("progress-bar");
     const resultContainer = document.getElementById("result-container");
-    const resultImage    = document.getElementById("result-image");
-    const downloadBtn    = document.getElementById("download-btn");
+    const resultImage = document.getElementById("result-image");
+    const downloadBtn = document.getElementById("download-btn");
     const createAnotherBtn = document.getElementById("create-another-btn");
 
     /*=====================================
         Constants & State
     =====================================*/
-    const MAX_SIZE     = 10 * 1024 * 1024;
+    const MAX_SIZE = 10 * 1024 * 1024;
     const ALLOWED_TYPES = ["image/jpeg", "image/jpg", "image/png"];
-    let selectedFile   = null;
-    let isProcessing   = false;
+    let selectedFile = null;
+    let isProcessing = false;
 
     const LOADER_STEPS = [
-        { text: "Uploading Image...",        progress: 20  },
-        { text: "Detecting Face...",         progress: 40  },
-        { text: "Removing Background...",    progress: 65  },
-        { text: "Optimizing Image...",       progress: 85  },
+        { text: "Uploading Image...", progress: 20 },
+        { text: "Detecting Face...", progress: 40 },
+        { text: "Removing Background...", progress: 65 },
+        { text: "Optimizing Image...", progress: 85 },
         { text: "Preparing Passport Photo...", progress: 95 }
     ];
 
@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // 60s timeout — rembg can take time on first run
             const timeoutId = setTimeout(() => controller.abort(), 60000);
 
-            const response = await fetch("/api/upload", {
+            const response = await fetch("https://snappass-ai-backend.onrender.com/api/upload", {
                 method: "POST",
                 body: formData,
                 signal: controller.signal
