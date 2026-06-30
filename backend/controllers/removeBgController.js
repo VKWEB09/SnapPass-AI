@@ -1,10 +1,13 @@
 const path = require("path");
 const fs = require("fs");
-const { spawn } = require("child_process");
+const axios = require("axios");
+const FormData = require("form-data");
 
 exports.removeBackground = async (req, res) => {
 
     console.log("========== PYTHON REMOVE BG START ==========");
+
+    const inputPath = req.file ? req.file.path : null;
 
     try {
 
@@ -15,82 +18,41 @@ exports.removeBackground = async (req, res) => {
             });
         }
 
-        const inputPath = req.file.path;
-
         const outputFileName = `bg-removed-${Date.now()}.png`;
+        const outputPath = path.join(__dirname, "../uploads", outputFileName);
 
-        const outputPath = path.join(
-            __dirname,
-            "../uploads",
-            outputFileName
+        const form = new FormData();
+        form.append("image", fs.createReadStream(inputPath));
+
+        const response = await axios.post(
+            "http://127.0.0.1:5001/remove",
+            form,
+            {
+                headers: form.getHeaders(),
+                responseType: "arraybuffer",
+                timeout: 90000, // 90s safety timeout for inference itself
+            }
         );
 
-        console.log("Input:", inputPath);
-        console.log("Output:", outputPath);
+        fs.writeFileSync(outputPath, response.data);
 
-        const python = spawn("python", [
+        // Clean up original upload
+        fs.unlink(inputPath, () => { });
 
-            path.join(__dirname, "../python/remove_bg.py"),
-
-            inputPath,
-
-            outputPath
-
-        ]);
-
-        python.stdout.on("data", (data) => {
-
-            console.log(data.toString());
-
+        return res.json({
+            success: true,
+            image: outputFileName
         });
 
-        python.stderr.on("data", (data) => {
+    } catch (err) {
 
-            console.error(data.toString());
+        console.error(err.message);
 
-        });
-
-        python.on("close", (code) => {
-
-            console.log("Python Exit Code:", code);
-
-            // Clean up the original uploaded file to prevent disk fill
-            fs.unlink(inputPath, () => {});
-
-            if (code !== 0) {
-
-                return res.status(500).json({
-
-                    success: false,
-
-                    message: "Background removal failed."
-
-                });
-
-            }
-
-            return res.json({
-
-                success: true,
-
-                image: outputFileName
-
-            });
-
-        });
-
-    }
-
-    catch (err) {
-
-        console.error(err);
+        if (inputPath) fs.unlink(inputPath, () => { });
 
         return res.status(500).json({
-
             success: false,
-
-            message: err.message
-
+            message: "Background removal failed."
         });
 
     }
