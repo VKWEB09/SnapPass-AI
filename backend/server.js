@@ -33,6 +33,7 @@ const PORT = process.env.PORT || 5000;
 // Start the persistent Python rembg server ONCE.
 // It keeps the model + heavy libs loaded in memory for all future requests.
 const pythonServer = spawn("python", [
+    "-u",
     path.join(__dirname, "python/rembg_server.py"),
 ]);
 
