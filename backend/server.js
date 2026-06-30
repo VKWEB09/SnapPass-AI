@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
+const axios = require("axios");
 const { spawn } = require("child_process");
 
 const uploadRoutes = require("./routes/upload");
@@ -17,21 +18,18 @@ if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });
 }
 
-// Serve uploaded images
 app.use("/uploads", express.static(uploadsDir));
-
-// Upload Route
 app.use("/api/upload", uploadRoutes);
 
-// Health Check
 app.get("/", (req, res) => {
     res.send("SnapPass AI Backend Running 🚀");
 });
 
 const PORT = process.env.PORT || 5000;
 
-// Start the persistent Python rembg server ONCE.
-// It keeps the model + heavy libs loaded in memory for all future requests.
+// Track whether the Python Flask server is ready to accept requests
+global.pythonReady = false;
+
 const pythonServer = spawn("python", [
     "-u",
     path.join(__dirname, "python/rembg_server.py"),
@@ -47,7 +45,25 @@ pythonServer.stderr.on("data", (data) => {
 
 pythonServer.on("close", (code) => {
     console.log(`Python server exited with code ${code}`);
+    global.pythonReady = false;
 });
+
+// Poll Flask's /health endpoint until it responds, instead of guessing a fixed delay
+async function waitForPython() {
+    for (let i = 0; i < 60; i++) { // up to ~2 minutes
+        try {
+            await axios.get("http://127.0.0.1:5001/health", { timeout: 2000 });
+            global.pythonReady = true;
+            console.log("✅ Python rembg server is ready");
+            return;
+        } catch (err) {
+            await new Promise((r) => setTimeout(r, 2000));
+        }
+    }
+    console.error("❌ Python server did not become ready in time");
+}
+
+waitForPython();
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
