@@ -65,6 +65,11 @@ async function waitForPython() {
 
 waitForPython();
 
+// Debug route — lets you check Python server status from the browser
+app.get("/api/python-status", (req, res) => {
+    res.json({ pythonReady: global.pythonReady });
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
