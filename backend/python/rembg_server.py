@@ -24,8 +24,8 @@ import io
 app = Flask(__name__)
 
 try:
-    print("Loading u2net model session...", flush=True)
-    session = new_session("u2net")
+    print("Loading u2netp model session...", flush=True)
+    session = new_session("u2netp")
     print("Model session loaded OK", flush=True)
 except Exception as e:
     print("FAILED to load model session:", e, flush=True)
