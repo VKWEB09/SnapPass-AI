@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Read the SnapPass AI Privacy Policy to learn how we collect, use, and protect your uploaded photos and personal information.">
+    <meta name="keywords" content="SnapPass AI privacy policy, passport photo data privacy, uploaded photo security">
+    <link rel="canonical" href="https://snappassai.com/privacy-policy.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Privacy Policy | SnapPass AI">
+    <meta property="og:description"
+        content="How SnapPass AI collects, uses, and protects your data and uploaded photos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snappassai.com/privacy-policy.html">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SnapPass AI Privacy Policy">
+    <meta name="twitter:description" content="How SnapPass AI collects, uses, and protects your data.">
+
+    <title>Privacy Policy | SnapPass AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <style>
+        /* ======================================================
+   SnapPass AI — assets/css/pages.css
+   Independent stylesheet for secondary pages
+   (about, pricing, contact, legal, 404).
+
+   Does NOT redeclare :root and does NOT touch any
+   selector owned by css/style.css. It only reads the
+   existing CSS variables (--primary, --text-dark, etc.)
+   that style.css already defines on :root, and adds
+   new, page-scoped classes on top.
+
+   Load order on every page: style.css THEN pages.css.
+====================================================== */
+
+        /* ======================================================
+   PAGE HERO (compact banner for every secondary page)
+====================================================== */
+        .page-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #EFF6FF 0%, var(--bg-main) 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .page-hero h1 {
+            font-size: 2.75rem;
+            max-width: 780px;
+            margin: 0 auto 18px;
+        }
+
+        .page-hero-sub {
+            max-width: 620px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text-light);
+        }
+
+        /* ======================================================
+   GENERIC PAGE SECTION WRAPPERS
+====================================================== */
+        .pg-section {
+            padding: 80px 0;
+        }
+
+        .pg-section.alt {
+            background: var(--white);
+        }
+
+        .pg-section-header {
+            max-width: 700px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .pg-section-header h2 {
+            font-size: 2.1rem;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .pg-section-header p {
+            color: var(--text-light);
+            line-height: 1.75;
+            font-size: 1.02rem;
+        }
+
+        .pg-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .pg-two-col.reverse .pg-col-media {
+            order: 2;
+        }
+
+        .pg-col-text h3 {
+            font-size: 1.7rem;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .pg-col-text p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .pg-col-media {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pg-media-card {
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 4/3;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        /* ======================================================
+   ABOUT PAGE
+====================================================== */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .value-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 34px 26px;
+            transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+        }
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 16px 34px rgba(37, 99, 235, 0.12);
+        }
+
+        .value-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: #EEF4FF;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .value-card h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.75;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .mv-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+        }
+
+        .mv-card .mv-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .mv-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .mv-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .tech-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 12px;
+        }
+
+        .tech-list li {
+            list-style: none;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .tech-list li .dot {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin-top: 7px;
+        }
+
+        /* ======================================================
+   PRICING PAGE
+====================================================== */
+        .pricing-toggle-note {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: -32px;
+            margin-bottom: 48px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .price-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .price-card.featured:hover {
+            transform: translateY(-12px);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 100px;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+        }
+
+        .price-plan-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .price-plan-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            min-height: 42px;
+        }
+
+        .price-amount {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+
+        .price-amount .amount {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .price-amount .cycle {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 28px;
+            flex-grow: 1;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.92rem;
+            color: var(--text-dark);
+        }
+
+        .price-features li:first-child {
+            border-top: none;
+        }
+
+        .price-features li .tick {
+            color: #16A34A;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .price-features li.unavailable {
+            color: var(--text-light);
+        }
+
+        .price-features li.unavailable .tick {
+            color: var(--border);
+        }
+
+        .price-card .btn {
+            width: 100%;
+        }
+
+        .soon-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            background: var(--bg-main);
+            color: var(--text-light);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* Comparison table */
+        .compare-wrap {
+            overflow-x: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            background: var(--white);
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 640px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            padding: 16px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.92rem;
+        }
+
+        .compare-table th:first-child,
+        .compare-table td:first-child {
+            text-align: left;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .compare-table thead th {
+            background: var(--bg-main);
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .compare-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .compare-table td .tick {
+            color: #16A34A;
+            font-weight: 700;
+        }
+
+        .compare-table td .cross {
+            color: var(--border);
+            font-weight: 700;
+        }
+
+        /* ======================================================
+   CONTACT PAGE EXTRAS
+====================================================== */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 26px;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .info-card .info-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: #EEF4FF;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-card h4 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .info-card a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ======================================================
+   LEGAL PAGES (privacy / terms / disclaimer)
+====================================================== */
+        .legal-shell {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .legal-toc {
+            position: sticky;
+            top: 110px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .legal-toc h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            margin-bottom: 14px;
+        }
+
+        .legal-toc a {
+            display: block;
+            padding: 7px 0;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            border-left: 2px solid transparent;
+            padding-left: 12px;
+            margin-left: -12px;
+            transition: var(--transition);
+        }
+
+        .legal-toc a:hover {
+            color: var(--primary);
+            border-left-color: var(--primary);
+        }
+
+        .legal-updated {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        .legal-content h2 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-top: 40px;
+            margin-bottom: 14px;
+            scroll-margin-top: 110px;
+        }
+
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .legal-content p {
+            color: var(--text-light);
+            line-height: 1.85;
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+        }
+
+        .legal-content ul {
+            margin: 0 0 18px 0;
+            padding-left: 22px;
+            color: var(--text-light);
+            line-height: 1.85;
+            font-size: 0.98rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 8px;
+        }
+
+        .legal-content strong {
+            color: var(--text-dark);
+        }
+
+        .legal-note {
+            background: #EFF6FF;
+            border: 1px solid #BFDBFE;
+            border-radius: var(--radius-sm);
+            padding: 18px 20px;
+            color: var(--text-dark);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin: 24px 0;
+        }
+
+        /* ======================================================
+   404 PAGE
+====================================================== */
+        .error-page {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 160px 0 100px;
+            text-align: center;
+        }
+
+        .error-illustration {
+            width: 200px;
+            margin: 0 auto 32px;
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--primary), #60A5FA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .error-page h2 {
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .error-page p {
+            color: var(--text-light);
+            max-width: 440px;
+            margin: 0 auto 32px;
+            line-height: 1.75;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ======================================================
+   CTA banner reused on inner pages
+====================================================== */
+        .pg-cta {
+            padding: 90px 0;
+            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            color: #fff;
+            text-align: center;
+        }
+
+        .pg-cta h2 {
+            color: #fff;
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+        }
+
+        .pg-cta p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .pg-cta .btn-secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .pg-cta .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ======================================================
+   BLOG PAGE
+====================================================== */
+        .blog-filter-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .blog-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 18px;
+            border-radius: 100px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .blog-pill:hover,
+        .blog-pill.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 16px 34px rgba(37, 99, 235, 0.12);
+        }
+
+        .blog-card.featured {
+            grid-column: span 2;
+        }
+
+        .blog-thumb {
+            height: 180px;
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .blog-card.featured .blog-thumb {
+            height: 240px;
+        }
+
+        .blog-card-body {
+            padding: 26px 24px 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            align-self: flex-start;
+            background: #EEF4FF;
+            color: var(--primary);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 14px;
+        }
+
+        .blog-card-body h3 {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .blog-card.featured .blog-card-body h3 {
+            font-size: 1.5rem;
+        }
+
+        .blog-card-body p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 14px;
+        }
+
+        .blog-read-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .blog-read-link svg {
+            transition: transform 0.25s ease;
+        }
+
+        .blog-card:hover .blog-read-link svg {
+            transform: translateX(3px);
+        }
+
+        .blog-newsletter {
+            max-width: 640px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 44px 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .blog-newsletter h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .blog-newsletter p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 13px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            font-family: inherit;
+            font-size: 0.92rem;
+            background: var(--bg-main);
+            color: var(--text-dark);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+        }
+
+        /* ======================================================
+   RESPONSIVE
+====================================================== */
+        @media (max-width: 1024px) {
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .price-card.featured {
+                transform: none;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .legal-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .legal-toc {
+                position: static;
+            }
+
+            .pg-two-col {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .pg-two-col.reverse .pg-col-media {
+                order: 0;
+            }
+
+            .tech-list {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .blog-card.featured {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 130px 0 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .pg-section {
+                padding: 60px 0;
+            }
+
+            .compare-table {
+                min-width: 560px;
+            }
+
+            .error-code {
+                font-size: 4.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card.featured {
+                grid-column: span 1;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .value-card,
+            .mv-card,
+            .price-card,
+            .info-card {
+                padding: 26px 20px;
+            }
+
+            .error-actions {
+                flex-direction: column;
+            }
+
+            .blog-newsletter {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Privacy Policy",
+        "url": "https://snappassai.com/privacy-policy.html"
+    }
+    </script>
+</head>
+
+<body>
+
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5"
+                    aria-hidden="true">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                    <circle cx="12" cy="13" r="4" />
+                </svg>
+                <span class="logo-text">SnapPass<span class="accent">AI</span></span>
+            </a>
+
+            <ul class="nav-links" id="nav-links" role="list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="index.html#upload-section" class="btn btn-primary btn-sm">Start Free</a>
+                <button class="mobile-toggle" id="menu-toggle" aria-label="Open Menu" aria-expanded="false"
+                    aria-controls="nav-links">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Page Hero -->
+        <section class="page-hero" style="padding-bottom: 40px;">
+            <div class="container">
+                <div class="page-eyebrow">Legal</div>
+                <h1>Privacy Policy</h1>
+            </div>
+        </section>
+
+        <section class="pg-section alt">
+            <div class="container">
+                <div class="legal-shell">
+
+                    <aside class="legal-toc" aria-label="Table of contents">
+                        <h4>On This Page</h4>
+                        <a href="#information-collection">Information Collection</a>
+                        <a href="#uploaded-images">Uploaded Images</a>
+                        <a href="#security">Security</a>
+                        <a href="#cookies">Cookies</a>
+                        <a href="#third-party">Third-Party Services</a>
+                        <a href="#data-retention">Data Retention</a>
+                        <a href="#contact">Contact</a>
+                    </aside>
+
+                    <div>
+                        <p class="legal-updated">Last updated: January 1, 2026</p>
+
+                        <div class="legal-content">
+
+                            <p>This Privacy Policy explains how SnapPass AI ("we," "our," or "us") collects, uses,
+                                and safeguards information when you use our AI passport photo generator to create a
+                                passport size photo, visa photo, or other biometric photo.</p>
+
+                            <h2 id="information-collection">Information Collection</h2>
+                            <p>We collect limited information necessary to operate the service, including:</p>
+                            <ul>
+                                <li>Technical data such as browser type, device type, and general usage analytics.</li>
+                                <li>Information you voluntarily submit through our contact form, such as your name,
+                                    email address, and message.</li>
+                                <li>The photo you upload for background removal and passport photo generation.</li>
+                            </ul>
+                            <p>We do not require account creation, so we do not collect passwords or persistent user
+                                profiles to use the core passport photo tool.</p>
+
+                            <h2 id="uploaded-images">Uploaded Images</h2>
+                            <p>When you upload a photo, it is sent to our processing system solely to perform
+                                background removal, face detection, and passport-size cropping. Your uploaded photo
+                                is used only to generate the output image you requested.</p>
+                            <div class="legal-note">
+                                We do not use your uploaded photo for facial recognition profiling, advertising
+                                targeting, or any purpose beyond generating your passport photo.
+                            </div>
+
+                            <h2 id="security">Security</h2>
+                            <p>Uploaded photos are transmitted using encrypted connections and processed on secured
+                                infrastructure. We apply reasonable technical safeguards to protect your images and
+                                personal information from unauthorized access, alteration, or disclosure.</p>
+
+                            <h2 id="cookies">Cookies</h2>
+                            <p>SnapPass AI may use cookies and similar technologies to remember basic site
+                                preferences and to understand aggregate site usage. Cookies help the website
+                                function correctly and may also support advertising services, including Google
+                                AdSense, which may use cookies to serve relevant ads. You can control or disable
+                                cookies through your browser settings at any time.</p>
+
+                            <h2 id="third-party">Third-Party Services</h2>
+                            <p>We may rely on third-party infrastructure providers to host the website and process
+                                images. We do not sell your uploaded photos or personal information to third
+                                parties. Third-party advertising partners, such as Google AdSense, operate under
+                                their own privacy policies and may collect data independently of SnapPass AI in
+                                accordance with applicable advertising standards.</p>
+
+                            <h2 id="data-retention">Data Retention</h2>
+                            <p>Uploaded photos are retained only for as long as needed to complete processing and
+                                deliver your result, after which they are automatically deleted from active
+                                processing storage. Contact form submissions are retained only as long as necessary
+                                to respond to and resolve your inquiry.</p>
+
+                            <h2 id="contact">Contact</h2>
+                            <p>If you have questions about this Privacy Policy or how your data is handled, please
+                                reach out via our <a href="contact.html">contact page</a> or email us directly at
+                                <a href="mailto:support@snappassai.com">support@snappassai.com</a>.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+
+                <div class="footer-brand">
+                    <span class="logo-text">SnapPass<span class="accent">AI</span></span>
+                    <p>Create AI-powered passport photos in seconds with automatic background removal, precise cropping,
+                        and compliance with international passport photo standards.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Quick Links</h4>
+                        <a href="#home">Home</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-and-conditions.html">Terms & Conditions</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="mailto:support@snappassai.com">Contact Us</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 SnapPass AI. All Rights Reserved.</p>
+                <p class="footer-secure">🔒 Your uploaded photos are processed securely and never shared with third
+                    parties.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script/js.js"></script>
+</body>
+
+</html>
