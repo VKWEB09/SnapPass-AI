@@ -1,17 +1,10 @@
 const path = require("path");
 const fs = require("fs");
-const axios = require("axios");
-const FormData = require("form-data");
-
-function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-}
+const { spawn } = require("child_process");
 
 exports.removeBackground = async (req, res) => {
 
     console.log("========== PYTHON REMOVE BG START ==========");
-
-    const inputPath = req.file ? req.file.path : null;
 
     try {
 
@@ -22,72 +15,82 @@ exports.removeBackground = async (req, res) => {
             });
         }
 
-        // If Python server isn't ready yet (e.g. just after a cold start),
-        // wait briefly instead of failing immediately.
-        if (!global.pythonReady) {
-            console.log("Python server not ready yet, waiting...");
-            for (let i = 0; i < 30; i++) { // up to 60s
-                if (global.pythonReady) break;
-                await sleep(2000);
-            }
-        }
-
-        if (!global.pythonReady) {
-            fs.unlink(inputPath, () => { });
-            return res.status(503).json({
-                success: false,
-                message: "Server is still starting up. Please try again in a moment."
-            });
-        }
+        const inputPath = req.file.path;
 
         const outputFileName = `bg-removed-${Date.now()}.png`;
-        const outputPath = path.join(__dirname, "../uploads", outputFileName);
 
-        const form = new FormData();
-        form.append("image", fs.createReadStream(inputPath));
+        const outputPath = path.join(
+            __dirname,
+            "../uploads",
+            outputFileName
+        );
 
-        // Retry a couple of times in case of a transient connection issue
-        let response;
-        let lastErr;
-        for (let attempt = 1; attempt <= 3; attempt++) {
-            try {
-                response = await axios.post(
-                    "http://127.0.0.1:5001/remove",
-                    form,
-                    {
-                        headers: form.getHeaders(),
-                        responseType: "arraybuffer",
-                        timeout: 90000,
-                    }
-                );
-                lastErr = null;
-                break;
-            } catch (err) {
-                lastErr = err;
-                console.error(`Attempt ${attempt} failed: ${err.message}`);
-                await sleep(2000);
-            }
-        }
+        console.log("Input:", inputPath);
+        console.log("Output:", outputPath);
 
-        if (lastErr) throw lastErr;
+        const python = spawn("python", [
 
-        fs.writeFileSync(outputPath, response.data);
-        fs.unlink(inputPath, () => { });
+            path.join(__dirname, "../python/remove_bg.py"),
 
-        return res.json({
-            success: true,
-            image: outputFileName
+            inputPath,
+
+            outputPath
+
+        ]);
+
+        python.stdout.on("data", (data) => {
+
+            console.log(data.toString());
+
         });
 
-    } catch (err) {
+        python.stderr.on("data", (data) => {
 
-        console.error(err.message);
+            console.error(data.toString());
 
-        if (inputPath) fs.unlink(inputPath, () => { });
+        });
+
+        python.on("close", (code) => {
+
+            console.log("Python Exit Code:", code);
+
+            // Clean up the original uploaded file to prevent disk fill
+            fs.unlink(inputPath, () => {});
+
+            if (code !== 0) {
+
+                return res.status(500).json({
+
+                    success: false,
+
+                    message: "Background removal failed."
+
+                });
+
+            }
+
+            return res.json({
+
+                success: true,
+
+                image: outputFileName
+
+            });
+
+        });
+
+    }
+
+    catch (err) {
+
+        console.error(err);
 
         return res.status(500).json({
+
             success: false,
-            message: "Background removal failed."
+
+            message: err.message
+
         });
 
     }

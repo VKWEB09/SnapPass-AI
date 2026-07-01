@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // 60s timeout — rembg can take time on first run
             const timeoutId = setTimeout(() => controller.abort(), 90000); // 90 sec — Render cold start + CPU inference
 
-            const response = await fetch("https://snappass-ai-backend.onrender.com/api/upload", {
+            const response = await fetch("http://localhost:5000/api/upload", {
                 method: "POST",
                 body: formData,
                 signal: controller.signal
@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             await new Promise(r => setTimeout(r, 500));
 
-            const imageURL = "https://snappass-ai-backend.onrender.com/uploads/" + data.image;
+            const imageURL = "http://localhost:5000/uploads/" + data.image;
             resultImage.src = imageURL;
             downloadBtn.href = imageURL;
             downloadBtn.setAttribute("download", "passport-photo.png");
